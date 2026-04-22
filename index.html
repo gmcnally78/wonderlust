@@ -218,68 +218,111 @@
             </section>
         </article>
     </main>
+
     <footer>
+
+        
+        
         <section id="contact-us">
-            Contact Us <span id="required">(*required)</span>
-            
+            <h2>Contact Us <span id="required">(*required)</span></h2>
+            <form action="https://wp.zybooks.com/form-viewer.php" method="post">
                 <div>
-                    <label>First Name<span>*</span></label>
-                    <input>
+                    <label for="first-name">First Name<span class="required">*</span></label>
+                    <input 
+                    type="text"
+                    id="first-name"
+                    name="firstname"
+                    required
+                    oninvalid="this.setCustomValidity('Please type your first name')" 
+                    oninput="this.setCustomValidity('')">
                 </div>
                 <div>
-                    <label>Last Name<span>*</span></label>
-                    <input>
+                    <label for="last-name">
+                        Last Name<span class="required">*</span>
+                      </label>
+                      
+                      <input 
+                        type="text"
+                        id="last-name"
+                        name="lastname"
+                        required
+                        oninvalid="this.setCustomValidity('Please type your last name')" 
+                        oninput="this.setCustomValidity('')">
                 </div>
                 <div>
-                    <label>Email<span>*</span></label>
-                    <input>
+                    <label for="email">
+                        Email<span class="required">*</span>
+                      </label>
+                      
+                      <input 
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        oninvalid="this.setCustomValidity('Please enter a valid email address')" 
+                        oninput="this.setCustomValidity('')">
                 </div>
                 <div>
-                    <label>Phone<span>*</span></label>
-                    <input>
+                    <label for="phone">Phone<span class="required">*</span></label>
+                    <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    oninvalid="this.setCustomValidity('Please type your phone number')"
+                    oninput="this.setCustomValidity('')">
                 </div>
                 <fieldset id="preferred-contact">
-                <legend>Preferred Contact Method<span>*</span></legend>
+                <legend>Preferred Contact Method<span class="required">*</span></legend>
                     <div> 
-                        <input>
-                        <label>Email</label>
+                        <label class="form-control">
+                            <input type="radio" name="contact" value="email" required>
+                            Email
+                        </label>
+                        
                     </div>
                     <div>
-                        <input>
-                        <label>Text</label>
+                        <label class="form-control">
+                            <input type="radio" name="contact" value="text">
+                            Text
+                          </label>
                     </div>
                     <div>
-                        <input>
-                        <label>Phone</label>
+                        <label class="form-control">
+                            <input type="radio" name="contact" value="phone">
+                            Phone
+                          </label>
                     </div>
                 </fieldset>
                 <fieldset id="destination">
                     <legend>Destination<span>*</span></legend>
-                    <select id="select-destination">
-                        <option>Choose</option>
-                        <option>Barcelona</option>
-                        <option>Granada</option>
-                        <option>Ibiza</option>
-                        <option>Madrid</option>
-                        <option>Majorca</option>
-                        <option>Seville</option>
-                        <option>Tenerife</option>
-                        <option>Valencia</option>
-                        <option>Other</option>
+                    <select id="select-destination" name="destination" required>
+                        <option value="">Choose</option>
+                        <option value="Barcelona">Barcelona</option>
+                        <option value="Granada">Granada</option>
+                        <option value="Ibiza">Ibiza</option>
+                        <option value="Madrid">Madrid</option>
+                        <option value="Majorca">Majorca</option>
+                        <option value="Seville">Seville</option>
+                        <option value="Tenerife">Tenerife</option>
+                        <option value="Valencia">Valencia</option>
+                        <option value="Other">Other</option>
                     </select>
                 </fieldset>
                 <fieldset id="travelTime">
                     <legend>Travel Time<span>*</span></legend>
-                    <select id="select-travel-time">
-                        <option>Choose</option>
-                        <option>Fall</option>
-                        <option>Winter</option>
-                        <option>Spring</option>
-                        <option>Summer</option>
-                        <option>Flexible</option>
-                    </select>
+                    <select id="select-travel-time" name="travel-time" required>
+                        <option value="">Choose</option>
+                        <option value="fall">Fall</option>
+                        <option value="winter">Winter</option>
+                        <option value="spring">Spring</option>
+                        <option value="summer">Summer</option>
+                        <option value="flexible">Flexible</option>
+                    </select><br>
+                    <input type="submit" id="submit" value="Submit">
                 </fieldset>
-                <input>
+                
+            </form>
             
         </section>
         <section id="legal">
@@ -287,6 +330,7 @@
             <small>Copyright 2021 Wonderlust</small>
             <a href="#">Privacy Statement</a>
             <a href="#">Terms of Service</a>
+        
         </section>
     </footer>
 </body>
